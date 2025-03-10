@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom Color Scheme */
+        :root {
+            --primary: #2a2a72;
+            --secondary: #009ffd;
+            --accent: #ff0076;
+            --light: #f4f4f4;
+            --dark: #232528;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--light);
+        }
+
+        /* Header Animation */
+        header {
+            padding: 2rem;
+            text-align: center;
+            animation: slideDown 1s ease;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* About Section */
+        #about {
+            padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-img {
+            width: 250px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 20px var(--accent);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Skills Grid */
+        #skills {
+            padding: 4rem 2rem;
+            background: var(--dark);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Project Cards */
+        .project-grid {
+            width: 600px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .project-card {
+            background: var(--light);
+            color: var(--dark);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        /* Resume Button */
+        .resume-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .resume-btn:hover {
+            letter-spacing: 2px;
+            box-shadow: 0 0 20px var(--accent);
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 4rem 2rem;
+            background: var(--dark);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #about {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Srinivas Palsa</div>
+        <p class="tagline">Passionate Web Developer</p>
+    </header>
+
+    <section id="about">
+        <img src="isq4fRawv1gp5ue_hnyBM-transformed.png" alt="Srinivas Palsa" class="profile-img">
+        <div>
+            <h2 style="font-size: xx-large;">About Me</h2><br>   
+            <p style="font-size: larger;">Dedicated Computer Science Engineering student with a strong interest in WEB DEVELOPMENT. Gained practical experience through Real Time Research Project on "Designing a Web Interface for managing sports leagues with SQL Backend". Eager to leverage my skills in web development to make a positive impact....<p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
+            <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+            <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+            <div class="skill-item"><i class="fab fa-react"></i> React</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>    Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="Blog-Featured-Image-44.webp" alt="project 1" style="width: 100%;">
+                <div class="project-info" style="text-align: center;"><br>
+                    <h3>Managing Sports Leagues</h3><br>                
+                    <a href="https://github.com/srinivas-palsa/RealTimeResearchProject.git">Click here
+                        <i class="fab fa-github"></i></a>
+                    </a>
+                </div>
+            </div>
+            <!-- Add more project cards -->
+        </div>
+    </section>
+    <h2>Resume</h2><br>
+    <section id="resume">
+        <a href="srinivas_resume.pdf" class="resume-btn" download>
+            Download Resume <i class="fas fa-download"></i>
+        </a>
+    </section>
+
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i> palsasrinivas03@gmail.com
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i> 6304512498
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/srinivas-palsa" style="color:white;">Github</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <a href="www.linkedin.com/in/srinivas-palsa" style="color:white;">Linkedin</a>  
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="text-align: center; font-size: large ;">&copy; 2023 Srinivas Palsa. All rights reserved.</p>
+    </footer>
+</body>
+</html>
